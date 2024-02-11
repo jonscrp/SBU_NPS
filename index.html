@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #welcome-message-container {
+            animation: fadeIn 3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes fadeIn {
+        100% { opacity: 0; }
+        0% { opacity: 1; }
+
+        
+}
+        
+
+        #container-form {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #form {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="welcome-message-container">
+        <div id="welcome-message">
+            <h1>Title</h1>
+            
+        </div>
+    </div>
+
+    <script>
+        setTimeout(createForm, 3000);
+
+        function createForm() {
+            var welcomeMessage = document.getElementById("welcome-message-container");
+            welcomeMessage.style.display = "none";
+
+            var containerForm = document.getElementById("container-form");
+            containerForm.innerHTML = `
+                <form action="imageCompletionBar.html" class="form">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname" value="John"><br>
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                    <input type="submit" value="Submit">
+                </form>`;
+                
+            containerForm.style.display = "block";
+        }
+    </script>
+
+    <div id="container-form"></div>
+
+</body>
+
+</html>
